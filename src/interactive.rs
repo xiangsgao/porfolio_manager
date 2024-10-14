@@ -1,12 +1,11 @@
 
-use clap::Parser;
 use std::io;
 
 enum MenuOption {
-    CREATE_PIE = 1,
-    MODIFY_PIE = 2,
-    ADD_FUND = 3,
-    ERROR = -1
+    CreatePie = 1,
+    ModifyPie = 2,
+    AddFund = 3,
+    Error = -1
 }
 
 
@@ -36,9 +35,9 @@ pub fn interactive_menu(){
     };
 
     match user_option {
-        1 => println!("To be implemented"),
-        2 => println!("To be implemented"),
-        3 => println!("To be implemented"),
+        user_option if user_option == MenuOption::AddFund as i32 => println!("To be implemented"),
+        user_option if user_option == MenuOption::CreatePie as i32 => println!("To be implemented"),
+        user_option if user_option == MenuOption::ModifyPie as i32 => println!("To be implemented"),
         _ => println!("Please select a valid option")
     } 
     
