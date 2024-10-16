@@ -5,6 +5,7 @@ enum MenuOption {
     CreatePie = 1,
     ModifyPie = 2,
     AddFund = 3,
+    Exit = 4,
     Error = -1
 }
 
@@ -17,6 +18,7 @@ fn print_menu(){
         1) Create a pie
         2) Modify a pie
         3) Add funds
+        4) Exit
 
     "###
     );
@@ -34,11 +36,15 @@ pub fn interactive_menu(){
         Err(_) => -1
     };
 
-    match user_option {
-        user_option if user_option == MenuOption::AddFund as i32 => println!("To be implemented"),
-        user_option if user_option == MenuOption::CreatePie as i32 => println!("To be implemented"),
-        user_option if user_option == MenuOption::ModifyPie as i32 => println!("To be implemented"),
-        _ => println!("Please select a valid option")
-    } 
+    loop{
+        match user_option {
+            user_option if user_option == MenuOption::AddFund as i32 => println!("To be implemented"),
+            user_option if user_option == MenuOption::CreatePie as i32 => println!("To be implemented"),
+            user_option if user_option == MenuOption::ModifyPie as i32 => println!("To be implemented"),
+            user_option if user_option == MenuOption::Exit as i32 => break,
+            _ => println!("Please select a valid option")
+        } 
+    }
+    
     
 }
